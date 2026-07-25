@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper Radar · AI × Education & Equity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,500&family=Karla:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F0F2F4; --card:#FFFFFF; --ink:#16212B; --muted:#5D6B78;
+  --line:#D9DEE3; --line-soft:#E7EAEE;
+  --direct:#0A6C6D; --transfer:#B27B16;
+  --c-ai_in_education:#0A6C6D;
+  --c-educational_equity:#97315B;
+  --c-learning_science:#33589E;
+  --c-ai_and_cognition:#6247A8;
+  --c-methods_for_education_research:#55702C;
+  --c-education_policy_society:#8C5A1E;
+  --c-other:#6B7480;
+  --sans:"Karla",-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"Spline Sans Mono",ui-monospace,SFMono-Regular,Consolas,monospace;
+  --disp:"Newsreader",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* ---------- masthead ---------- */
+header{border-bottom:2px solid var(--ink);padding:40px 0 24px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,5.2vw,50px);line-height:1.05;margin:10px 0 8px;letter-spacing:-.01em}
+h1 em{font-style:italic;font-weight:500;color:var(--direct)}
+.sub{color:var(--muted);max-width:660px}
+.metaline{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.metaline b{color:var(--ink);font-weight:500}
+
+/* ---------- pulse strip (signature) ---------- */
+.pulse-block{padding:20px 0 6px;border-bottom:1px solid var(--line)}
+.pulse-title{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.pulse{display:flex;align-items:flex-end;gap:4px;min-height:66px;overflow-x:auto;padding-bottom:4px}
+.dcol{display:flex;flex-direction:column;align-items:center;gap:5px;flex:0 0 auto;background:none;border:none;padding:2px;border-radius:4px}
+.dcol:hover{background:var(--line-soft)}
+.dcol.active{background:var(--ink)}
+.dcol.active .dlab{color:var(--paper)}
+.dbar{width:12px;border-radius:2px 2px 0 0;background:var(--direct)}
+.dcol .dbar.mix{background:linear-gradient(to top,var(--direct) 50%,var(--transfer) 50%)}
+.dlab{font-family:var(--mono);font-size:9.5px;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg);height:38px}
+
+/* ---------- filters ---------- */
+.filters{padding:16px 0 4px;border-bottom:1px solid var(--line)}
+.seg{display:inline-flex;border:1px solid var(--ink);border-radius:8px;overflow:hidden;margin-bottom:12px}
+.seg button{background:var(--card);border:none;padding:7px 14px;font-size:13px;color:var(--muted);border-right:1px solid var(--line)}
+.seg button:last-child{border-right:none}
+.seg button.on{background:var(--ink);color:var(--paper)}
+.seg button .swatch{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11.5px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 11px;color:var(--muted)}
+.chip .dot{width:8px;height:8px;border-radius:50%}
+.chip.on{border-color:var(--ink);color:var(--ink)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding-bottom:14px}
+.search{flex:1 1 240px;border:1px solid var(--line);border-radius:8px;background:var(--card);padding:9px 12px;font-size:14px;color:var(--ink)}
+select{border:1px solid var(--line);border-radius:8px;background:var(--card);padding:9px 10px;font-size:13.5px;color:var(--ink);max-width:250px}
+.clear-btn{border:1px solid var(--line);background:none;border-radius:8px;padding:9px 12px;font-size:13px;color:var(--muted)}
+.clear-btn:hover{border-color:var(--ink);color:var(--ink)}
+.count{font-family:var(--mono);font-size:12px;color:var(--muted);padding:12px 0}
+
+/* ---------- feed ---------- */
+.datehead{font-family:var(--disp);font-style:italic;font-size:17px;color:var(--muted);margin:22px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px 18px 13px;margin-bottom:11px;position:relative}
+.card h2{font-family:var(--sans);font-size:16.5px;font-weight:600;line-height:1.35;padding-right:60px}
+.card h2 a{text-decoration:none}
+.card h2 a:hover{text-decoration:underline;text-underline-offset:3px}
+.newbadge{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;background:var(--ink);color:var(--paper);border-radius:4px;padding:2px 7px}
+.authors{color:var(--muted);font-size:13px;margin-top:4px}
+.pmeta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:7px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+.rtag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;border-radius:4px;padding:2px 7px;color:#fff;text-transform:uppercase}
+.rtag.direct{background:var(--direct)}
+.rtag.transferable{background:var(--transfer)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.tag{font-family:var(--mono);font-size:10.5px;padding:3px 8px;border-radius:4px;color:#fff}
+.reason{font-size:13px;color:#3D4854;margin-top:9px;padding-left:10px;border-left:2px solid var(--line)}
+.reason b{font-weight:600;color:var(--ink)}
+details{margin-top:9px}
+summary{font-family:var(--mono);font-size:11.5px;color:var(--muted);cursor:pointer;user-select:none}
+summary:hover{color:var(--ink)}
+.abstract{font-size:13.5px;color:#3D4854;margin-top:8px;line-height:1.6}
+.cite-btn{margin-top:10px;border:none;background:none;font-family:var(--mono);font-size:11px;color:var(--muted);padding:0;text-decoration:underline;text-underline-offset:3px}
+.cite-btn:hover{color:var(--ink)}
+
+.empty{border:1px dashed var(--line);border-radius:10px;padding:34px 24px;margin:26px 0;color:var(--muted);text-align:center}
+.empty code{font-family:var(--mono);font-size:12.5px;background:var(--line-soft);padding:2px 6px;border-radius:4px}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:20px 0 46px;font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.9}
+main{padding-top:2px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Automated Literature Alert · Updated by GitHub Actions</div>
+    <h1>Paper Radar <em>— AI × Education &amp; Equity</em></h1>
+    <p class="sub">New papers from leading journals, screened by an LLM for direct relevance to AI in education and educational equity — or for ideas transferable to them. Click any title to open the publisher page.</p>
+    <div class="metaline" id="metaline"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="pulse-block" id="pulseBlock" hidden>
+    <div class="pulse-title">Publication pulse — papers per day (click a day to filter)</div>
+    <div class="pulse" id="pulse"></div>
+  </div>
+
+  <div class="filters" id="filters" hidden>
+    <div class="seg" role="group" aria-label="Relevance type">
+      <button data-rel="" class="on">All</button>
+      <button data-rel="direct"><span class="swatch" style="background:var(--direct)"></span>Direct</button>
+      <button data-rel="transferable"><span class="swatch" style="background:var(--transfer)"></span>Transferable</button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="controls">
+      <input class="search" id="q" type="search" placeholder="Search title, author, abstract…" aria-label="Search">
+      <select id="journalSel" aria-label="Filter by journal"><option value="">All journals</option></select>
+      <select id="sortSel" aria-label="Sort">
+        <option value="date">Newest first</option>
+        <option value="cited">Most cited</option>
+        <option value="conf">Highest relevance</option>
+      </select>
+      <button class="clear-btn" id="clearBtn">Clear filters</button>
+    </div>
+  </div>
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+</main>
+
+<footer>
+  <div class="wrap" id="footinfo"></div>
+</footer>
+
+<script src="papers.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var CAT_LABEL = {
+    ai_in_education: "AI in education",
+    educational_equity: "educational equity",
+    learning_science: "learning science",
+    ai_and_cognition: "AI & cognition",
+    methods_for_education_research: "methods",
+    education_policy_society: "policy & society"
+  };
+  var CAT_ORDER = Object.keys(CAT_LABEL);
+
+  function catColor(c) {
+    var v = getComputedStyle(document.documentElement)
+      .getPropertyValue("--c-" + (CAT_LABEL[c] ? c : "other"));
+    return v ? v.trim() : "#6B7480";
+  }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  var main = document.querySelector("main");
+  if (!window.PAPERS_DATA || !window.PAPERS_DATA.papers || !window.PAPERS_DATA.papers.length) {
+    var em = el("div", "empty");
+    em.appendChild(el("p", "", "No data yet. The first GitHub Actions run will populate this page."));
+    var p2 = el("p", ""); p2.style.marginTop = "10px";
+    p2.appendChild(el("code", "", "Actions → Update Paper Radar → Run workflow"));
+    em.appendChild(p2);
+    main.appendChild(em);
+    return;
+  }
+
+  var META = window.PAPERS_DATA.meta || {};
+  var NEW_DAYS = META.new_badge_days || 7;
+  var today = new Date();
+  var PAPERS = window.PAPERS_DATA.papers.map(function (p) {
+    p._cat = (p.categories && p.categories[0]) || "other";
+    p._search = [p.title, (p.authors || []).join(" "), p.journal, p.abstract]
+      .join(" ").toLowerCase();
+    p._isNew = false;
+    if (p.first_seen) {
+      var d = new Date(p.first_seen + "T00:00:00");
+      p._isNew = (today - d) / 86400000 <= NEW_DAYS;
+    }
+    return p;
+  });
+
+  /* ---------- meta ---------- */
+  var metaline = document.getElementById("metaline");
+  [["papers", META.n_papers], ["journals tracked", META.n_journals_tracked],
+   ["screening model", META.model], ["last updated", META.generated]]
+    .forEach(function (pair) {
+      var s = el("span", "", pair[0] + " ");
+      s.appendChild(el("b", "", String(pair[1] == null ? "—" : pair[1])));
+      metaline.appendChild(s);
+    });
+  document.getElementById("footinfo").textContent =
+    "Pipeline: OpenAlex metadata for " + (META.n_journals_tracked || "?") +
+    " journals → " + (META.model || "LLM") +
+    " relevance screening (direct or transferable) → this page. " +
+    "Automated screening has misses and false alarms — verify before citing. " +
+    "Last updated " + (META.generated || "—") + ".";
+
+  /* ---------- state ---------- */
+  var state = { q: "", rel: "", cats: {}, day: null, journal: "", sort: "date" };
+
+  /* ---------- pulse strip ---------- */
+  var byDay = {};
+  PAPERS.forEach(function (p) {
+    if (!p.date) return;
+    byDay[p.date] = byDay[p.date] || { direct: 0, transferable: 0 };
+    var t = p.relevance_type === "transferable" ? "transferable" : "direct";
+    byDay[p.date][t] += 1;
+  });
+  var dayKeys = Object.keys(byDay).sort().slice(-45);
+  var maxD = 1;
+  dayKeys.forEach(function (d) {
+    var t = byDay[d].direct + byDay[d].transferable;
+    if (t > maxD) maxD = t;
+  });
+  var pulse = document.getElementById("pulse");
+  dayKeys.forEach(function (d) {
+    var col = el("button", "dcol");
+    col.setAttribute("aria-label", d);
+    var n = byDay[d].direct + byDay[d].transferable;
+    var bar = el("div", "dbar" + (byDay[d].direct && byDay[d].transferable ? " mix" : ""));
+    if (!byDay[d].direct) bar.style.background = "var(--transfer)";
+    bar.style.height = Math.max(4, Math.round(n / maxD * 44)) + "px";
+    bar.title = d + ": " + n + " paper" + (n > 1 ? "s" : "");
+    col.appendChild(bar);
+    col.appendChild(el("span", "dlab", d.slice(5)));
+    col.dataset.day = d;
+    col.addEventListener("click", function () {
+      state.day = (state.day === d) ? null : d;
+      render();
+    });
+    pulse.appendChild(col);
+  });
+
+  /* ---------- topic chips ---------- */
+  var catCounts = {};
+  PAPERS.forEach(function (p) {
+    (p.categories && p.categories.length ? p.categories : ["other"]).forEach(function (c) {
+      catCounts[c] = (catCounts[c] || 0) + 1;
+    });
+  });
+  var chips = document.getElementById("chips");
+  CAT_ORDER.filter(function (c) { return catCounts[c]; }).forEach(function (c) {
+    var chip = el("button", "chip");
+    var dot = el("span", "dot");
+    dot.style.background = catColor(c);
+    chip.appendChild(dot);
+    chip.appendChild(el("span", "", CAT_LABEL[c]));
+    chip.appendChild(el("span", "", " " + catCounts[c]));
+    chip.addEventListener("click", function () {
+      state.cats[c] = !state.cats[c];
+      chip.classList.toggle("on", !!state.cats[c]);
+      render();
+    });
+    chips.appendChild(chip);
+  });
+
+  /* ---------- controls ---------- */
+  document.getElementById("pulseBlock").hidden = false;
+  document.getElementById("filters").hidden = false;
+
+  Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (b) {
+    b.addEventListener("click", function () {
+      state.rel = b.dataset.rel;
+      Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (x) {
+        x.classList.toggle("on", x === b);
+      });
+      render();
+    });
+  });
+
+  var journals = {};
+  PAPERS.forEach(function (p) { if (p.journal) journals[p.journal] = (journals[p.journal] || 0) + 1; });
+  var jsel = document.getElementById("journalSel");
+  Object.keys(journals).sort(function (a, b) { return journals[b] - journals[a]; })
+    .forEach(function (j) {
+      var o = el("option", "", j + " (" + journals[j] + ")");
+      o.value = j;
+      jsel.appendChild(o);
+    });
+
+  var qInput = document.getElementById("q"), qTimer = null;
+  qInput.addEventListener("input", function () {
+    clearTimeout(qTimer);
+    qTimer = setTimeout(function () {
+      state.q = qInput.value.trim().toLowerCase();
+      render();
+    }, 150);
+  });
+  jsel.addEventListener("change", function () { state.journal = jsel.value; render(); });
+  document.getElementById("sortSel").addEventListener("change", function (e) {
+    state.sort = e.target.value; render();
+  });
+  document.getElementById("clearBtn").addEventListener("click", function () {
+    state = { q: "", rel: "", cats: {}, day: null, journal: "", sort: state.sort };
+    qInput.value = ""; jsel.value = "";
+    Array.prototype.forEach.call(document.querySelectorAll(".chip.on"), function (c) { c.classList.remove("on"); });
+    Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (b) {
+      b.classList.toggle("on", b.dataset.rel === "");
+    });
+    render();
+  });
+
+  /* ---------- card ---------- */
+  function authorsLine(a) {
+    if (!a || !a.length) return "";
+    return a.length > 6 ? a.slice(0, 6).join(", ") + " et al." : a.join(", ");
+  }
+  function makeCard(p) {
+    var card = el("article", "card");
+    if (p._isNew) card.appendChild(el("span", "newbadge", "NEW"));
+
+    var h = el("h2");
+    var link = el("a", "", p.title || "(untitled)");
+    link.href = p.doi ? "https://doi.org/" + p.doi : (p.id ? "https://openalex.org/" + p.id : "#");
+    link.target = "_blank"; link.rel = "noopener";
+    h.appendChild(link);
+    card.appendChild(h);
+
+    if (p.authors && p.authors.length) card.appendChild(el("div", "authors", authorsLine(p.authors)));
+
+    var pm = el("div", "pmeta");
+    if (p.relevance_type) {
+      pm.appendChild(el("span", "rtag " + p.relevance_type, p.relevance_type));
+    }
+    pm.appendChild(el("span", "", p.journal || ""));
+    pm.appendChild(el("span", "", p.date || ""));
+    pm.appendChild(el("span", "", "cited " + (p.cited_by || 0)));
+    pm.appendChild(el("span", "", "conf " + (p.confidence != null ? p.confidence : "—")));
+    card.appendChild(pm);
+
+    if (p.categories && p.categories.length) {
+      var tags = el("div", "tags");
+      p.categories.forEach(function (c) {
+        var t = el("span", "tag", CAT_LABEL[c] || c);
+        t.style.background = catColor(c);
+        tags.appendChild(t);
+      });
+      card.appendChild(tags);
+    }
+    if (p.reason) {
+      var r = el("div", "reason");
+      r.appendChild(el("b", "", "Why it matters: "));
+      r.appendChild(document.createTextNode(p.reason));
+      card.appendChild(r);
+    }
+    if (p.abstract) {
+      var d = el("details");
+      d.appendChild(el("summary", "", "Abstract"));
+      d.appendChild(el("p", "abstract", p.abstract));
+      card.appendChild(d);
+    }
+    var cb = el("button", "cite-btn", "Copy citation");
+    cb.addEventListener("click", function () {
+      var cite = authorsLine(p.authors) + " (" + (p.year || "") + "). " + p.title + ". " +
+        p.journal + "." + (p.doi ? " https://doi.org/" + p.doi : "");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(cite).then(function () {
+          cb.textContent = "Copied";
+          setTimeout(function () { cb.textContent = "Copy citation"; }, 1400);
+        });
+      }
+    });
+    card.appendChild(cb);
+    return card;
+  }
+
+  /* ---------- render ---------- */
+  var list = document.getElementById("list");
+  var countBox = document.getElementById("count");
+
+  function render() {
+    var activeCats = Object.keys(state.cats).filter(function (c) { return state.cats[c]; });
+    var rows = PAPERS.filter(function (p) {
+      if (state.q && p._search.indexOf(state.q) === -1) return false;
+      if (state.rel && p.relevance_type !== state.rel) return false;
+      if (state.day && p.date !== state.day) return false;
+      if (state.journal && p.journal !== state.journal) return false;
+      if (activeCats.length) {
+        var hit = (p.categories || []).some(function (c) { return state.cats[c]; });
+        if (!hit) return false;
+      }
+      return true;
+    });
+    if (state.sort === "cited") rows.sort(function (a, b) { return (b.cited_by || 0) - (a.cited_by || 0); });
+    else if (state.sort === "conf") rows.sort(function (a, b) { return (b.confidence || 0) - (a.confidence || 0); });
+    else rows.sort(function (a, b) {
+      return (b.date || "").localeCompare(a.date || "") || (b.cited_by || 0) - (a.cited_by || 0);
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll(".dcol"), function (c) {
+      c.classList.toggle("active", state.day !== null && c.dataset.day === state.day);
+    });
+
+    countBox.textContent = "Showing " + rows.length + " of " + PAPERS.length + " papers" +
+      (state.day ? " · " + state.day : "");
+    list.textContent = "";
+    var frag = document.createDocumentFragment();
+    var lastDate = null;
+    rows.forEach(function (p) {
+      if (state.sort === "date" && p.date && p.date !== lastDate) {
+        frag.appendChild(el("div", "datehead", p.date));
+        lastDate = p.date;
+      }
+      frag.appendChild(makeCard(p));
+    });
+    list.appendChild(frag);
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
