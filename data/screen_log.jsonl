@@ -2961,3 +2961,20 @@
 {"id": "W7171565300", "error": "empty response"}
 {"id": "W7171502521", "error": "empty response"}
 {"id": "W7171549593", "error": "empty response"}
+{"id": "W4413874996", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "The paper is about machine learning for catalyst design in chemistry, with no connection to education, learning, or equity."}
+{"id": "W4413095630", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "The paper is about software for cryo-electron tomography data processing, unrelated to AI in education or educational equity."}
+{"id": "W4414766432", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "The paper is on malaria antibody engineering and structural biology, with no connection to AI in education or educational equity."}
+{"id": "W4412092146", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "The paper is about operando neutron imaging of iron plating in redox flow batteries, which is a materials science/energy storage topic with no connection to AI in education or educational equity."}
+{"id": "W4413835653", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "This paper is about Parkinson's disease pathology and synaptic biology with no connection to AI in education or educational equity."}
+{"id": "W4411392908", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "This paper investigates the neural development of scene processing in infants, with no direct or transferable implications for AI in education or educational equity."}
+{"id": "W4411660050", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "Paper studies clonal memory in blood stem cells and leukaemia, with no connection to AI, education, or equity."}
+{"id": "W4412370334", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "The paper is about bacterial evolution and antibiotic resistance, with no connection to AI in education or educational equity."}
+{"id": "W4412759958", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "The paper studies social organization evolution in placental mammals, with no relevance to AI in education or educational equity; no transferable idea is identifiable."}
+{"id": "W4412871640", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "Study on pancreatic immune cells in obesity, no connection to AI in education or educational equity."}
+{"id": "W4414449900", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This paper is about quantum physics experiments in microgravity, with no connection to AI in education, educational equity, or any transferable idea relevant to these fields."}
+{"id": "W4414621171", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "The paper is about non-Gaussian statistics in phase transitions, a topic in statistical physics with no direct or transferable connection to AI in education or educational equity."}
+{"id": "W4414351097", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "The paper is a genetic study of fibromyalgia with no connection to AI in education or educational equity."}
+{"id": "W4414684101", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "This paper is about ultrafast X-ray physics and imaging, with no connection to education, learning, or AI in education."}
+{"id": "W4416888400", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "This is a condensed matter physics paper on electronic phases in a 2D material, with no connection to AI, education, or equity."}
+{"id": "W4394983653", "error": "empty response"}
+{"id": "W4412619374", "error": "empty response"}
