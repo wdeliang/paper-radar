@@ -3992,3 +3992,14 @@
 {"id": "W7201988286", "relevant": true, "relevance_type": "direct", "confidence": 0.95, "categories": ["ai_in_education", "learning_science"], "reason": "The paper presents an AI-driven emotional agent that detects and regulates students' emotions to improve academic success, directly contributing to AI in education and learning science research."}
 {"id": "W7201961071", "error": "empty response"}
 {"id": "W7201974580", "error": "empty response"}
+{"id": "W4405185119", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "The paper is about a mass spectrometry method for phosphoproteomics in cancer biology, with no connection to AI in education or educational equity."}
+{"id": "W4411123700", "relevant": false, "relevance_type": null, "confidence": 1.0, "categories": [], "reason": "This is a molecular cell biology paper on dynein motor protein activation, with no connection to AI, education, or equity."}
+{"id": "W7202032217", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "This is a biomedical study on liver cancer, with no connection to AI in education or educational equity."}
+{"id": "W7202052769", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "The paper is about bacterial volatile organic compounds affecting airway mucus, with no link to AI in education or educational equity."}
+{"id": "W7202040733", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This paper is about mosquito virome and dengue transmission in Congo, unrelated to AI in education or educational equity, and offers no transferable insight for education research."}
+{"id": "W4413271922", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This nutritional genomics study examines diet-gene interactions and has no connection to AI in education or educational equity."}
+{"id": "W7202037214", "error": "empty response"}
+{"id": "W7202046259", "error": "empty response"}
+{"id": "W7202043167", "error": "empty response"}
+{"id": "W7202050467", "error": "empty response"}
+{"id": "W7202056174", "error": "empty response"}
