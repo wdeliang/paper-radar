@@ -6378,3 +6378,5 @@
 {"id": "W7208835805", "error": "empty response"}
 {"id": "W7208812636", "error": "empty response"}
 {"id": "W7208810053", "error": "empty response"}
+{"id": "W7210263266", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "The paper concerns genetic mechanisms of telomere length, a molecular biology topic with no connection to AI in education, educational equity, or learning science."}
+{"id": "W7210285445", "relevant": true, "relevance_type": "direct", "confidence": 0.75, "categories": ["ai_in_education"], "reason": "The paper examines preparing pre-service teachers to integrate technology through collaborative design, directly relevant to educational technology in teacher education."}
