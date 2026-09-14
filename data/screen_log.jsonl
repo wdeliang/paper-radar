@@ -6940,3 +6940,7 @@
 {"id": "W7212296774", "error": "empty response"}
 {"id": "W7212376296", "error": "empty response"}
 {"id": "W7212353769", "error": "empty response"}
+{"id": "W7212447992", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "The paper is about a climate phenomenon (El Niño) and has no connection to AI in education, learning, or educational equity."}
+{"id": "W7212423249", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "This is a photonics/physics paper with no connection to AI in education, educational equity, learning science, or related human behavior."}
+{"id": "W7212450289", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "This is a molecular plant-pathology study of rice blast infection with no connection to human learning, education, AI, or equity."}
+{"id": "W7212445653", "relevant": true, "relevance_type": "direct", "confidence": 0.6, "categories": ["educational_equity", "education_policy_society"], "reason": "The title indicates a special issue in economics of education focused on educational pathways, which directly addresses equity, access, and policy in education."}
