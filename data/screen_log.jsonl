@@ -7388,3 +7388,11 @@
 {"id": "W7213448108", "error": "empty response"}
 {"id": "W7213448255", "error": "empty response"}
 {"id": "W7213472524", "error": "empty response"}
+{"id": "W7213524344", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This is a biochemistry/drug-targeting paper with no human learning, education, AI, or equity content."}
+{"id": "W7213515690", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This is a materials science study of ferroelectric ceramics with no human learning, education, or equity content."}
+{"id": "W7170042921", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This paper is a neurobiological atlas of mosquito brain and has no connection to AI in education, educational equity, or transferable human learning/behavior concepts."}
+{"id": "W7213524074", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This paper is about evolutionary ecology of invasive plants, with no connection to AI in education, educational equity, learning science, or related human-centered research."}
+{"id": "W7213528879", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This is a planetary science paper about Mercury's geological contraction, with no connection to education, learning, or equity."}
+{"id": "W7213530763", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "The paper is about a molecular mechanism in chromatin biology under phosphate starvation, with no connection to education, AI, or equity."}
+{"id": "W7213504073", "relevant": false, "relevance_type": null, "confidence": 0.85, "categories": [], "reason": "The paper concerns vocal pitch in human communication of intentions, with no clear link to AI in education or educational equity."}
+{"id": "W7213493176", "error": "empty response"}
