@@ -7497,3 +7497,6 @@
 {"id": "W7213638335", "relevant": true, "relevance_type": "direct", "confidence": 0.95, "categories": ["learning_science"], "reason": "The paper directly examines a learning intervention and self-regulated study behavior in university students, which is central to education research."}
 {"id": "W7131882012", "error": "empty response"}
 {"id": "W7213551284", "error": "empty response"}
+{"id": "W7213744749", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "This is a materials-science paper on designing luminescent materials using active learning, with no connection to AI in education, educational equity, or human learning."}
+{"id": "W7213536941", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "The paper concerns AI applied to fluid dynamics/physics equations without human learning, education, or equity implications."}
+{"id": "W7213788551", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "This is a hardware/systems paper on memristive singular value decomposition with no human learning, educational, or equity implications."}
