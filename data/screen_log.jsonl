@@ -8054,3 +8054,9 @@
 {"id": "W7214451037", "error": "empty response"}
 {"id": "W7214497902", "error": "empty response"}
 {"id": "W7214489139", "error": "empty response"}
+{"id": "W7214529095", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "This is a microbial engineering study about expressing tungsten formate dehydrogenases in E. coli, with no connection to education, learning, or equity."}
+{"id": "W7214550483", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This is structural biology of GPCR signaling with no connection to AI in education, learning, or educational equity."}
+{"id": "W7214548314", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This paper is about forensic microbiome modeling for postmortem interval estimation and has no connection to AI in education, educational equity, or human learning."}
+{"id": "W7214552430", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This is a clinical immunology study of vaccine immune responses in people with HIV, with no connection to education, learning, AI, or educational equity."}
+{"id": "W7214553671", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "The paper is about antibiotic persistence in microbiology, with no connection to AI in education, educational equity, or human learning."}
+{"id": "W7214054393", "relevant": true, "relevance_type": "direct", "confidence": 0.95, "categories": ["learning_science", "methods_for_education_research"], "reason": "The paper directly investigates how experimental design (varying one vs. more than one variable) affects children's learning and transfer, making it relevant to learning and instruction research."}
