@@ -8564,3 +8564,7 @@
 {"id": "W7218933651", "error": "empty response"}
 {"id": "W7219129775", "error": "empty response"}
 {"id": "W7219091984", "error": "empty response"}
+{"id": "W7219783533", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This is a cell biology methods paper about photoproximity labelling across plasma membranes, with no connection to AI in education, educational equity, learning, or transferable social science."}
+{"id": "W7219622524", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This paper concerns electrochemical wastewater treatment chemistry and has no connection to education, learning, AI in education, or educational equity."}
+{"id": "W7219604947", "relevant": true, "relevance_type": "direct", "confidence": 0.98, "categories": ["ai_in_education", "educational_equity", "education_policy_society"], "reason": "The paper directly examines how generative AI use affects multidimensional engagement among minority ethnic international students in UK higher education and draws equity-focused policy implications."}
+{"id": "W7219918654", "relevant": false, "relevance_type": null, "confidence": 0.9, "categories": [], "reason": "The paper concerns neural coding of speech comprehension, with no direct or concrete transferable implication for AI in education or educational equity."}
