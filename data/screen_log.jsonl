@@ -9158,3 +9158,11 @@
 {"id": "W7131786354", "error": "empty response"}
 {"id": "W7221351810", "error": "empty response"}
 {"id": "W7221356294", "error": "Unterminated string starting at: line 6 column 13 (char 153)"}
+{"id": "W7203979420", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This is a public health/epidemiology study of HCV among people who use drugs, with no connection to education, AI in education, or educational equity."}
+{"id": "W7221437791", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This paper is about segmenting cell membranes in cryo-electron tomograms, a cell biology imaging method with no connection to AI in education or educational equity."}
+{"id": "W7221451387", "relevant": false, "relevance_type": null, "confidence": 0.95, "categories": [], "reason": "This is an ecology paper about plant invasions and community stability with no human learning, education, or equity content."}
+{"id": "W7219351683", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This is a physical oceanography study of near-inertial currents and wind forcing, with no human learning, education, equity, or transferable methods relevant to AI in education or educational equity."}
+{"id": "W7221459911", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This paper is about deep learning for live-cell microscopy imaging, with no human learning, education, or equity content."}
+{"id": "W7221459789", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This is a genomics and evolutionary biology study of finch beak morphology with no human learning, education, AI, or equity content."}
+{"id": "W7221467836", "relevant": false, "relevance_type": null, "confidence": 0.99, "categories": [], "reason": "This is a molecular biology/synthetic biology paper on assembling bacterial biosynthetic gene clusters with no connection to AI in education, educational equity, or learning science."}
+{"id": "W7221472601", "relevant": false, "relevance_type": null, "confidence": 0.98, "categories": [], "reason": "This is a cancer immunotherapy study with no connection to education, learning, or educational equity."}
